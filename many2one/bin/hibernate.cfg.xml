@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+	<!-- session-factory里面的配置顺序为：property，mapping，(class-cache|collection-cache)*，,event*,listener* -->
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://127.0.0.1:3306/hibernatetest?characterEncoding=UTF-8</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">bao</property>
+		<!--配置方言，明确告诉hibernate连接是那种数据库  -->
+		<property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+		<!--测试的时候可以用下面这个配置来显示出执行的sql -->	
+		<property name="show_sql">true</property>			
+		<!-- 打印出漂亮的sql语句，对上面的show_sql显示出来的sql语句进行格式化-->
+		<property name="format_sql">true</property>
+		<!-- 让hibernate自动创建表 ;create:如果没有该表则创建，如果有表则删除在创建；
+		update：如果没有表则创建新表，如果有表对比表结构是否有变化，有则删除重新创建，没有则不做任何改动-->
+		<property name="hbm2ddl.auto">update</property> 
+		
+			<!--启动二级缓存；注意：二级缓存配置必写在“对象映射文件配置“前面 ，注意：session-factory里面配置顺序-->
+		 <property name="cache.use_second_level_cache">true</property>
+		 <!-- 指定使用哪种二级缓存 -->
+		 <property name="cache.provider_class">org.hibernate.cache.OSCacheProvider</property>
+		 <!-- <property name="hibernate.generate_statistics">true</property>	 -->	
+		 
+		<!--指定 管理的对象映射文件 -->
+		<mapping resource="cn/more/domain/Student.hbm.xml"/>
+		<mapping resource="cn/more/domain/Department.hbm.xml"/>		
+	    <mapping resource="cn/one2one/domain/Person.hbm.xml"/> 
+		<mapping resource="cn/one2one/domain/Card.hbm.xml"/>
+		<mapping resource="cn/many2many/domain/Courses.hbm.xml"/>
+		<mapping resource="cn/many2many/domain/Students.hbm.xml"/>
+		<mapping resource="cn/many2many/domain/StuCourse.hbm.xml"/>
+		<mapping resource="cn/many2many/domain/many2many2/Address.hbm.xml"/>
+		<mapping resource="cn/many2many/domain/many2many2/Person2.hbm.xml"/>
+
+		
+	
+		
+		<!-- 指定那个 domain启动二级缓存
+	    二级缓存策略有：
+	    1.read-only
+	    2.read-write
+	    3.nonstrict-read-write
+	    4.transcational
+			-->	
+		<class-cache usage="read-write" class="cn.more.domain.Department"/>
+		
+	</session-factory>
+	
+</hibernate-configuration>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
