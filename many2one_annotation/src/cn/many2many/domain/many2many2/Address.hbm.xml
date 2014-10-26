@@ -1,24 +1,24 @@
-<?xml version="1.0" encoding="GBK"?>
-<!-- Ö¸¶¨HibernateµÄDTDÐÅÏ¢ -->
+<?xml version="1.0" encoding="utf-8"?>
+<!-- æŒ‡å®šHibernateçš„DTDä¿¡æ¯ -->
 <!DOCTYPE hibernate-mapping
 	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="cn.many2many.domain.many2many2">
-	<!-- Address³Ö¾Ã»¯Àà-->
+	<!-- AddressæŒä¹…åŒ–ç±»-->
 	<class name="Address">
-		<!-- Ó³Éä±êÊ¶ÊôÐÔaddressid -->
+		<!-- æ˜ å°„æ ‡è¯†å±žæ€§addressid -->
 		<id name="addressid" column="column_id">
-			<!-- Ö¸¶¨Ö÷¼üÉú³ÉÆ÷²ßÂÔ -->
+			<!-- æŒ‡å®šä¸»é”®ç”Ÿæˆå™¨ç­–ç•¥ -->
 			<generator class="identity"/>
 		</id>
-		<!-- Ó³ÉäÆÕÍ¨ÊôÐÔaddressdetail -->
+		<!-- æ˜ å°„æ™®é€šå±žæ€§addressdetail -->
 		<property name="addressdetail"/>
-		<!-- Ó³Éä¼¯ºÏÊôÐÔ£¬¼¯ºÏÔªËØÊÇÆäËû³Ö¾Ã»¯ÊµÌå
-			Ã»ÓÐÖ¸¶¨cascadeÊôÐÔ -->
+		<!-- æ˜ å°„é›†åˆå±žæ€§ï¼Œé›†åˆå…ƒç´ æ˜¯å…¶ä»–æŒä¹…åŒ–å®žä½“
+			æ²¡æœ‰æŒ‡å®šcascadeå±žæ€§ -->
 		<set name="persons2" table="person_address">
-			<!-- Ö¸¶¨¹ØÁªµÄÍâ¼üÁÐ µÄÃû×Ö£¬ÒÔºó¾ÍÓÃÀ´×ö¹«¹²±íÀïÃæµÄAddressµÄidÁË-->
+			<!-- æŒ‡å®šå…³è”çš„å¤–é”®åˆ— çš„åå­—ï¼Œä»¥åŽå°±ç”¨æ¥åšå…¬å…±è¡¨é‡Œé¢çš„Addressçš„idäº†-->
 			<key column="address_id"/>
-			<!-- ÓÃÒÔÓ³Éä¹ØÁªÀàÊôÐÔ£¬ÒÔºóÔÚ¹«¹²±íÀïÃæ¾ÍÊÇPerson2µÄidÁË -->
+			<!-- ç”¨ä»¥æ˜ å°„å…³è”ç±»å±žæ€§ï¼Œä»¥åŽåœ¨å…¬å…±è¡¨é‡Œé¢å°±æ˜¯Person2çš„idäº† -->
 			<many-to-many class="Person2"
 				column="person_id"/>
 		</set>

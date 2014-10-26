@@ -16,7 +16,7 @@ public class TestMany2Many {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		//Ã¿¸öÀàÖĞµÄÊôĞÔµÄget£¬set·½·¨²»ÄÜËæ±ãĞŞ¸Ä£¬±ØĞëÎª£º¡°getÊôĞÔÃû¡±ÕâÖÖĞÎÊ½£¬²»È»hibernateÒ²»á±¨´´½¨±íÊ¾ÕÒ²»±¨µ½Ä³Ä³ÁĞ¡£
+		//æ¯ä¸ªç±»ä¸­çš„å±æ€§çš„getï¼Œsetæ–¹æ³•ä¸èƒ½éšä¾¿ä¿®æ”¹ï¼Œå¿…é¡»ä¸ºï¼šâ€œgetå±æ€§åâ€è¿™ç§å½¢å¼ï¼Œä¸ç„¶hibernateä¹Ÿä¼šæŠ¥åˆ›å»ºè¡¨ç¤ºæ‰¾ä¸æŠ¥åˆ°æŸæŸåˆ—ã€‚
 		//HibernateUtil.getCurrentSession();
 		test();
 	}
@@ -30,7 +30,7 @@ public class TestMany2Many {
 			s.setSname("bao");
 			
 			Courses c=new Courses();
-			c.setCname("ÓïÎÄ");
+			c.setCname("è¯­æ–‡");
 			
 			StuCourse sc=new StuCourse();
 			sc.setCourse(c);

@@ -11,25 +11,25 @@ import java.util.*;
  */
 public class Address
 {
-	//±êÊ¶ÊôĞÔ
+	//æ ‡è¯†å±æ€§
 	private int addressid;
-	//µØÖ·ÏêÏ¸ĞÅÏ¢
+	//åœ°å€è¯¦ç»†ä¿¡æ¯
 	private String addressdetail;
-	//N£­N¹ØÁª¹ØÏµ£¬Ê¹ÓÃSetÀ´±£´æ¹ØÁªÊµÌå
+	//Nï¼Nå…³è”å…³ç³»ï¼Œä½¿ç”¨Setæ¥ä¿å­˜å…³è”å®ä½“
 	private Set<Person2> persons2
 		= new HashSet<Person2>();
 
-	//ÎŞ²ÎÊıµÄ¹¹ÔìÆ÷
+	//æ— å‚æ•°çš„æ„é€ å™¨
 	public Address()
 	{
 	}
-	//³õÊ¼»¯addressdetailÊôĞÔµÄ¹¹ÔìÆ÷
+	//åˆå§‹åŒ–addressdetailå±æ€§çš„æ„é€ å™¨
 	public Address(String addressdetail)
 	{
 		this.addressdetail = addressdetail;
 	}
 
-	//addressidÊôĞÔµÄsetterºÍgetter·½·¨
+	//addressidå±æ€§çš„setterå’Œgetteræ–¹æ³•
 	public void setAddressid(int addressid)
 	{
 		this.addressid = addressid;
@@ -39,7 +39,7 @@ public class Address
 		return this.addressid;
 	}
 
-	//addressdetailÊôĞÔµÄsetterºÍgetter·½·¨
+	//addressdetailå±æ€§çš„setterå’Œgetteræ–¹æ³•
 	public void setAddressdetail(String addressdetail)
 	{
 		this.addressdetail = addressdetail;
@@ -49,7 +49,7 @@ public class Address
 		return this.addressdetail;
 	}
 
-	//personsÊôĞÔµÄsetterºÍgetter·½·¨
+	//personså±æ€§çš„setterå’Œgetteræ–¹æ³•
 	public void setPersons2(Set<Person2> persons2)
 	{
 		this.persons2 = persons2;

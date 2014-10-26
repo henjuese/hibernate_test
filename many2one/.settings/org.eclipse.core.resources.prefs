@@ -1,0 +1,12 @@
+#Sun Oct 26 14:10:35 CST 2014
+eclipse.preferences.version=1
+encoding//src/cn/many2many/domain/many2many2/Address.hbm.xml=UTF-8
+encoding//src/cn/many2many/domain/many2many2/Address.java=UTF-8
+encoding//src/cn/many2many/domain/many2many2/Person2.hbm.xml=UTF-8
+encoding//src/cn/many2many/domain/many2many2/Person2.java=UTF-8
+encoding//src/cn/more/util/HibernateUtil.java=UTF-8
+encoding//src/cn/more/util/MySessionFactory.java=UTF-8
+encoding//src/cn/more/view/TestMany2Many.java=UTF-8
+encoding//src/cn/more/view/TestMany2Many2.java=UTF-8
+encoding//src/cn/more/view/TestMany2one.java=UTF-8
+encoding//src/cn/more/view/TestOneToOne.java=UTF-8

@@ -15,11 +15,11 @@ public class Student implements java.io.Serializable {
 	@Column
 	private String name;
 	//
-	//fetch=FetchType.EAGER£ºÔÚ²éÑ¯ÓÃ»§Ê±£¬ĞèÒªs.getDepert().getName()Ö±½Ó¾Í»ñÈ¡Depertment¶ÔÏó£¬ÄÇÃ´¾ÍÓ¦¸Ã½«ÀÁ¼ÓÔØÈ¥µô¡£¾ÍÊÇ¶ÁÈ¡studentÖ®ºó¾ÍÓ¦¸Ã²éÑ¯deptmentÁË
-	//ÒòÎªËûÃÇÊÇÓĞ¹ØÁªµÄ¶à¶ÔÒ»µÄ¹ØÁªÅ¶£¡ËùÒÔ¿ÉÒÔÕâÑù×ö¡£Ö»Òª¾¯ÓÃÀÁ¼ÓÔØ¾Í£¬ÔÚ²éÑ¯²¿ÃÅµÄÊ±ºòÖ±½ÓÊ¹ÓÃgetDepert()¾Í¿ÉÒÔ»ñÈ¡µ½²¿ÃÅ¶ÔÏóÁË
-	//optional=falseÊ±join ²éÑ¯¹ØÏµÎªinner join,ÎªtrueÊ±£º¹ØÏµÎªleft join
+	//fetch=FetchType.EAGERï¼šåœ¨æŸ¥è¯¢ç”¨æˆ·æ—¶ï¼Œéœ€è¦s.getDepert().getName()ç›´æ¥å°±è·å–Depertmentå¯¹è±¡ï¼Œé‚£ä¹ˆå°±åº”è¯¥å°†æ‡’åŠ è½½å»æ‰ã€‚å°±æ˜¯è¯»å–studentä¹‹åå°±åº”è¯¥æŸ¥è¯¢deptmentäº†
+	//å› ä¸ºä»–ä»¬æ˜¯æœ‰å…³è”çš„å¤šå¯¹ä¸€çš„å…³è”å“¦ï¼æ‰€ä»¥å¯ä»¥è¿™æ ·åšã€‚åªè¦è­¦ç”¨æ‡’åŠ è½½å°±ï¼Œåœ¨æŸ¥è¯¢éƒ¨é—¨çš„æ—¶å€™ç›´æ¥ä½¿ç”¨getDepert()å°±å¯ä»¥è·å–åˆ°éƒ¨é—¨å¯¹è±¡äº†
+	//optional=falseæ—¶join æŸ¥è¯¢å…³ç³»ä¸ºinner join,ä¸ºtrueæ—¶ï¼šå…³ç³»ä¸ºleft join
 	@ManyToOne(cascade=CascadeType.ALL,fetch=FetchType.EAGER,targetEntity=Department.class)
-	//JoinColumnÌí¼Ó¹ØÁª×Ö¶Î£¬Ìí¼ÓÍâ¼ü£¬¶¨ÒåÍâ¼üµÄÃû³Æ£¬nullableÊÇ·ñÔÊĞíÎª¿Õ£»updatableÊ¹ÓÃORM¿ò¼Ü¸üĞÂ²Ù×÷Ê±£¬¸Ã×Ö¶ÎÊÇ·ñ³öÏÖÔÚupdateÓï¾äÖĞ
+	//JoinColumnæ·»åŠ å…³è”å­—æ®µï¼Œæ·»åŠ å¤–é”®ï¼Œå®šä¹‰å¤–é”®çš„åç§°ï¼Œnullableæ˜¯å¦å…è®¸ä¸ºç©ºï¼›updatableä½¿ç”¨ORMæ¡†æ¶æ›´æ–°æ“ä½œæ—¶ï¼Œè¯¥å­—æ®µæ˜¯å¦å‡ºç°åœ¨updateè¯­å¥ä¸­
 	@JoinColumn(name="depart_id",updatable=true,nullable=true)//,,updatable=true
 	private Department depert;
 	

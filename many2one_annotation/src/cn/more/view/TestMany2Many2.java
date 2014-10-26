@@ -20,7 +20,7 @@ public class TestMany2Many2 {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		//Ã¿¸öÀàÖĞµÄÊôĞÔµÄget£¬set·½·¨²»ÄÜËæ±ãĞŞ¸Ä£¬±ØĞëÎª£º¡°getÊôĞÔÃû¡±ÕâÖÖĞÎÊ½£¬²»È»hibernateÒ²»á±¨´´½¨±íÊ¾ÕÒ²»±¨µ½Ä³Ä³ÁĞ¡£
+		//æ¯ä¸ªç±»ä¸­çš„å±æ€§çš„getï¼Œsetæ–¹æ³•ä¸èƒ½éšä¾¿ä¿®æ”¹ï¼Œå¿…é¡»ä¸ºï¼šâ€œgetå±æ€§åâ€è¿™ç§å½¢å¼ï¼Œä¸ç„¶hibernateä¹Ÿä¼šæŠ¥åˆ›å»ºè¡¨ç¤ºæ‰¾ä¸æŠ¥åˆ°æŸæŸåˆ—ã€‚
 		//HibernateUtil.getCurrentSession();
 		//test();
 		getPerson2();
@@ -35,13 +35,13 @@ public class TestMany2Many2 {
 			tran=session.beginTransaction();
 			Address add=(Address)session.get(Address.class, 1);
 			System.out.println("add="+add.getAddressdetail());
-			//Ë«Ïò¹ØÁªÓëÀ¹½ØÔÚ»ĞÈ»´óÎò°¡
-			//ÕâÀï×öÁËË«Ïò¹ØÁª£¬µ«ÊÇ»¹ÊÇÓĞÖ÷´Ó¹ØÏµ¡£AddressÔÚ×¢½âÀïÃæ±»¶¨ÒåÎª´Ó±í¡£ËùÒÔµ±Ö´ĞĞtestµÄÊ±ºò²¢²»»áÔÚÖĞ¼ä±íÖĞÌí¼ÓÊı¾İ
-			//ÕâÀï¾ÍÓĞÁË£¬ÄÇÎªÊ²Ã´»¹Òª×öË«Ïò¹ØÁªÄØ£¿¾ÍÏÂÃæÕâ¾ä¸æËßÎÒ´ğ°¸ÁË£¬²éÑ¯µÄÊ±ºò£¬Í¨¹ıµØÖ·£¬Ö±½Ó¿ÉÒÔget³öPerson2µÄ¼¯ºÏ
-			//ÒòÎªÔÚAddressÀïÃæ×öÁË¹ØÁªPerson2µÄÉèÖÃÁË¡£
-			//ÄÇÀÁ¼ÓÔØÊÇÊ²Ã´ÎÊÌâÄã£¿
-			//ÔÚAddressÀïÃæÅäÖÃÀÁ¼ÓÔØºó£¬hibernate»áÏÈ²éÑ¯³öaddressid=1µÄÊı¾İ£¬µ±ÏÂÃæÎÒµ÷ÓÃÁËadd.getPersons2Ê±²Å»áÈ¥¿âÀïÃæ²éÑ¯³ö
-			//¸ÃµØÖ·ÏÂÃæÓĞ¶àÉÙÓÃ»§
+			//åŒå‘å…³è”ä¸æ‹¦æˆªåœ¨æç„¶å¤§æ‚Ÿå•Š
+			//è¿™é‡Œåšäº†åŒå‘å…³è”ï¼Œä½†æ˜¯è¿˜æ˜¯æœ‰ä¸»ä»å…³ç³»ã€‚Addressåœ¨æ³¨è§£é‡Œé¢è¢«å®šä¹‰ä¸ºä»è¡¨ã€‚æ‰€ä»¥å½“æ‰§è¡Œtestçš„æ—¶å€™å¹¶ä¸ä¼šåœ¨ä¸­é—´è¡¨ä¸­æ·»åŠ æ•°æ®
+			//è¿™é‡Œå°±æœ‰äº†ï¼Œé‚£ä¸ºä»€ä¹ˆè¿˜è¦åšåŒå‘å…³è”å‘¢ï¼Ÿå°±ä¸‹é¢è¿™å¥å‘Šè¯‰æˆ‘ç­”æ¡ˆäº†ï¼ŒæŸ¥è¯¢çš„æ—¶å€™ï¼Œé€šè¿‡åœ°å€ï¼Œç›´æ¥å¯ä»¥getå‡ºPerson2çš„é›†åˆ
+			//å› ä¸ºåœ¨Addressé‡Œé¢åšäº†å…³è”Person2çš„è®¾ç½®äº†ã€‚
+			//é‚£æ‡’åŠ è½½æ˜¯ä»€ä¹ˆé—®é¢˜ä½ ï¼Ÿ
+			//åœ¨Addressé‡Œé¢é…ç½®æ‡’åŠ è½½åï¼Œhibernateä¼šå…ˆæŸ¥è¯¢å‡ºaddressid=1çš„æ•°æ®ï¼Œå½“ä¸‹é¢æˆ‘è°ƒç”¨äº†add.getPersons2æ—¶æ‰ä¼šå»åº“é‡Œé¢æŸ¥è¯¢å‡º
+			//è¯¥åœ°å€ä¸‹é¢æœ‰å¤šå°‘ç”¨æˆ·
 			Set<Person2> ps=add.getPersons2();
 			for(Person2 p:ps){
 				System.out.println("person="+p.getName());
@@ -89,19 +89,19 @@ public class TestMany2Many2 {
 		try{
 			tran=session.beginTransaction();
 			
-			Address a = new Address("¹ãÖİÌìºÓ4");
+			Address a = new Address("å¹¿å·å¤©æ²³4");
 			session.persist(a);
 			
-			Address a2 = new Address("¹ãÖİÌìºÓ5");
-			//ÔÙ³Ö¾Ã»¯Address¶ÔÏó(¶ÔÓ¦ÓÚ²åÈë´Ó±í¼ÇÂ¼)
+			Address a2 = new Address("å¹¿å·å¤©æ²³5");
+			//å†æŒä¹…åŒ–Addresså¯¹è±¡(å¯¹åº”äºæ’å…¥ä»è¡¨è®°å½•)
 			session.persist(a2);
 			
 			Person2 p = new Person2();
 			p.setName("bao");
 			p.setAge(30);
 			
-			//µ¥Ïî¹ØÁªÊ±£¬ÎÒ°ÑÅäÖÃ·Åµ½ÁËperson2ÀïÃæ£¬ÕâÑùperson2È¥¹ØÁªaddress£¬¾ÍÊÇËµperson2ÊÇÖ÷µ¼Àà
-			//ËùÒÔµ±¸üĞÂÈËµÄÊ±ºò£¬ÕâÒ»¾ä»áÍ¬Ê±¸üĞÂ¹ØÁª±í
+			//å•é¡¹å…³è”æ—¶ï¼Œæˆ‘æŠŠé…ç½®æ”¾åˆ°äº†person2é‡Œé¢ï¼Œè¿™æ ·person2å»å…³è”addressï¼Œå°±æ˜¯è¯´person2æ˜¯ä¸»å¯¼ç±»
+			//æ‰€ä»¥å½“æ›´æ–°äººçš„æ—¶å€™ï¼Œè¿™ä¸€å¥ä¼šåŒæ—¶æ›´æ–°å…³è”è¡¨
 			p.getAddresses().add(a);
 			
 			session.save(p);		
@@ -129,14 +129,14 @@ public class TestMany2Many2 {
 			p.setAge(29);
 			session.save(p);
 			
-			Address a = new Address("¹ãÖİÌìºÓ");
-			//ËäÈ»×öÁËË«Ïò¹ØÁª£¬ÕâÀï¸üĞÂÊ±£¬²¢²»»áÔÚÖĞ¼ä±íÖĞ¼ÓÈëËûÃÇÖ®¼äµÄ¹ØÏµ
-			//ÒòÎªÖ÷µ¼È¨ÔÚPerson2£¬Ö»ÓĞPerson2Ö÷¶¯¸üĞÂaddressÊ±£¬ÖĞ¼ä±í²ÅÓĞÓÃ¡£
-			//addressÖĞÅäÖÃÁËmapped=""...È¨ÏŞÒÑ¾­·´×ª¸øÁËPerson2ÁË
+			Address a = new Address("å¹¿å·å¤©æ²³");
+			//è™½ç„¶åšäº†åŒå‘å…³è”ï¼Œè¿™é‡Œæ›´æ–°æ—¶ï¼Œå¹¶ä¸ä¼šåœ¨ä¸­é—´è¡¨ä¸­åŠ å…¥ä»–ä»¬ä¹‹é—´çš„å…³ç³»
+			//å› ä¸ºä¸»å¯¼æƒåœ¨Person2ï¼Œåªæœ‰Person2ä¸»åŠ¨æ›´æ–°addressæ—¶ï¼Œä¸­é—´è¡¨æ‰æœ‰ç”¨ã€‚
+			//addressä¸­é…ç½®äº†mapped=""...æƒé™å·²ç»åè½¬ç»™äº†Person2äº†
 			a.getPersons2().add(p);
 			session.persist(a);
 
-			Address a2 = new Address("ÉÏº£ºç¿Ú");
+			Address a2 = new Address("ä¸Šæµ·è™¹å£");
 			a2.getPersons2().add(p);
 			session.persist(a2);
 			

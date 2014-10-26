@@ -11,21 +11,21 @@ import java.util.*;
  */
 public class Person2
 {
-	//±êÊ¶ÊôĞÔ
+	//æ ‡è¯†å±æ€§
 	private int personid;
-	//PersonµÄnameÊôĞÔ
+	//Personçš„nameå±æ€§
 	private String name;
-	//±£ÁôPersonµÄageÊôĞÔ
+	//ä¿ç•™Personçš„ageå±æ€§
 	private int age;
-	//N£­N¹ØÁª¹ØÏµ£¬Ê¹ÓÃSetÀ´±£´æ¹ØÁªÊµÌå
+	//Nï¼Nå…³è”å…³ç³»ï¼Œä½¿ç”¨Setæ¥ä¿å­˜å…³è”å®ä½“
 	private Set<Address> addresses
 		= new HashSet<Address>();
 
-	//ÎŞ²ÎÊıµÄ¹¹ÔìÆ÷
+	//æ— å‚æ•°çš„æ„é€ å™¨
 	public Person2()
 	{
 	}
-	//³õÊ¼»¯È«²¿ÊôĞÔµÄ¹¹ÔìÆ÷
+	//åˆå§‹åŒ–å…¨éƒ¨å±æ€§çš„æ„é€ å™¨
 	public Person2(int personid , String name , int age)
 	{
 		this.personid = personid;
@@ -33,7 +33,7 @@ public class Person2
 		this.age = age;
 	}
 
-	//personidÊôĞÔµÄsetterºÍgetter·½·¨
+	//personidå±æ€§çš„setterå’Œgetteræ–¹æ³•
 	public void setPersonid(int personid)
 	{
 		this.personid = personid;
@@ -43,7 +43,7 @@ public class Person2
 		return this.personid;
 	}
 
-	//nameÊôĞÔµÄsetterºÍgetter·½·¨
+	//nameå±æ€§çš„setterå’Œgetteræ–¹æ³•
 	public void setName(String name)
 	{
 		this.name = name;
@@ -53,7 +53,7 @@ public class Person2
 		return this.name;
 	}
 
-	//ageÊôĞÔµÄsetterºÍgetter·½·¨
+	//ageå±æ€§çš„setterå’Œgetteræ–¹æ³•
 	public void setAge(int age)
 	{
 		this.age = age;
@@ -63,7 +63,7 @@ public class Person2
 		return this.age;
 	}
 
-	//addressesÊôĞÔµÄsetterºÍgetter·½·¨
+	//addresseså±æ€§çš„setterå’Œgetteræ–¹æ³•
 	public void setAddresses(Set<Address> addresses)
 	{
 		this.addresses = addresses;

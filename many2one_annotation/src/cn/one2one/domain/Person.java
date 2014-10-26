@@ -12,7 +12,7 @@ public class Person implements java.io.Serializable {
 	private int id;
 	@Column
 	private String name;
-	//@Transient当配置了单项一对一时，这个 字段可以不要
+	//@Transient褰撻厤缃簡鍗曢」涓�瀵逛竴鏃讹紝杩欎釜 瀛楁鍙互涓嶈
 	@OneToOne(mappedBy="person",cascade=CascadeType.ALL,fetch=FetchType.LAZY,targetEntity=Card.class)
 	private Card card;
 	public int getId() {

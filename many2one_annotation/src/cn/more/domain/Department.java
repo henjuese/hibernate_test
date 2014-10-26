@@ -17,11 +17,11 @@ public class Department implements java.io.Serializable {
 	@Column
 	private String name;
 	
-	//@Transient,设置该属性与配置无关
-	//这里使用了懒加载，因为我查询department时，我不想查询他对应着多少student
+	//@Transient,璁剧疆璇ュ睘鎬т笌閰嶇疆鏃犲叧
+	//杩欓噷浣跨敤浜嗘噿鍔犺浇锛屽洜涓烘垜鏌ヨdepartment鏃讹紝鎴戜笉鎯虫煡璇粬瀵瑰簲鐫�澶氬皯student
 	//mappedBy="depert",
 	@OneToMany(cascade=CascadeType.ALL,mappedBy="depert",fetch=FetchType.LAZY,targetEntity=Student.class)
-	private Set<Student> stu;//@JoinColumn(name="depart_id",nullable=false)//不配上这个会出现一张中间表
+	private Set<Student> stu;//@JoinColumn(name="depart_id",nullable=false)//涓嶉厤涓婅繖涓細鍑虹幇涓�寮犱腑闂磋〃
 	
 	public Set<Student> getStu() {
 		return stu;

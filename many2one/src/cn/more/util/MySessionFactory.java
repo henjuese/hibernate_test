@@ -3,9 +3,9 @@ package cn.more.util;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-//ÔÚÊ¹ÓÃhibernate¿ª·¢ÏîÄ¿ÊÇ£¬Ò»¶¨Òª±£Ö¤Ö»ÓĞÒ»¸öSessionFactory
-//Ò»¸öÊı¾İ¿â¶ÔÓ¦Ò»¸ösessionFactory¶ÔÏó
-//Õâ¸öÊÇ¸öµ¥ÌåÀà
+//åœ¨ä½¿ç”¨hibernateå¼€å‘é¡¹ç›®æ˜¯ï¼Œä¸€å®šè¦ä¿è¯åªæœ‰ä¸€ä¸ªSessionFactory
+//ä¸€ä¸ªæ•°æ®åº“å¯¹åº”ä¸€ä¸ªsessionFactoryå¯¹è±¡
+//è¿™ä¸ªæ˜¯ä¸ªå•ä½“ç±»
 final public class MySessionFactory {
 
 	private static SessionFactory sessionFactory=null;

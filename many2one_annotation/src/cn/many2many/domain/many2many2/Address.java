@@ -14,15 +14,15 @@ public class Address
 	
 	private String addressdetail;
 	
-	//@Transient//ÔÚµ¥Ïî¶à¶Ô¶àÊ±£¬ÒÑ¾­ÔÚPerson2ÅäÖÃÁË£¬ÕâÀï¾Í²»ĞèÒªÕâ¸ö×Ö¶Î£¬Ë«Ïò¹ØÁªÊ±²ÅĞèÒª
-	//ÏÂÃæÎÒÒª×ö¸öË«Ïò¹ØÁª£¬µ«ÊÇperson2Ö®Ç°µÄÅäÖÃ²»¶¯
-	//ÕâÀï²»Òª¼ÓÉÏÀÁ¼ÓÔØÅ¶£¬¼ÓÉÏÁË£¬ÒÔºó²éÈËÔ±¾Í²»ÄÜÖ±½Ó²éÑ¯³öaddressÁË
-	//Ë«Ïò¹ØÁªÊ±£ºÁ½¸öÊµÌå¼ä»¥Ïà¹ØÁªµÄÊôĞÔ±ØĞë±ê¼ÇÎª@ManyToMany£¬²¢Ïà»¥Ö¸¶¨targetEntityÊôĞÔ¡£
-	//ÓĞÇÒÖ»ÓĞÒ»¸öÊµÌåµÄ@ManyToMany×¢½âĞèÒªÖ¸¶¨mappedByÊôĞÔ£¬Ö¸ÏòtargetEntityµÄ¼¯ºÏÊôĞÔÃû³Æ¡£
-	//ÕâÀïµÄmappedBy="addresses"ÖĞµÄaddressÊÇPerson2ÖĞµÄ¼¯ºÏÊôĞÔÃû³Æ
-	//Ê²Ã´Ê±ºòÊ¹ÓÃÀÁ¼ÓÔØÄØ£¿ÕâÀï¶Ôperson2ÅäÖÃÁËÀÁ¼ÓÔØ£¬ÄÇÃ´µ±²éÑ¯AddressÊ±£¬¾Í²»»á°ÑaddressÏà¹ØµÄPersonÒ²¸ø²éÑ¯³öÀ´ÁË¡£
-	//ÄÇÃ´µ±²éÑ¯person2Ê±£¬¾ÍĞèÒª½«ÀÁ¼ÓÔØÈ¥µôÁË£¬ÒòÎªÎÒ²éÑ¯ÈËÔ±µÄÊ±ºòĞèÒª»ñÈ¡¸ÃÈËÔ±µÄµØÖ·¡£Èç¹ûÊ¹ÓÃÉÏÀÁ¼ÓÔØ·´¶ø»áÍÏ¿åĞÔÄÜ¡£Õâ¸öÊ±ºòĞèÒªµÄÊÇÒ»´ÎĞÔ²éÑ¯³öÀ´
-	//ÀÁ¼ÓÔØÊÇĞèÒªÊ±²ÅÈ¥²éÑ¯£¬¶ø´ËÊ±person2ÊÇ×îĞèÒªAddressµÄËùÒÔËû²»ĞèÒªÀÁ¼ÓÔØ¡£addressÀ´ËµËû²»ĞèÒªperson2ÄÇ¾Í¿ÉÒÔÊ¹ÓÃÀÁ¼ÓÔØÁË
+	//@Transient//åœ¨å•é¡¹å¤šå¯¹å¤šæ—¶ï¼Œå·²ç»åœ¨Person2é…ç½®äº†ï¼Œè¿™é‡Œå°±ä¸éœ€è¦è¿™ä¸ªå­—æ®µï¼ŒåŒå‘å…³è”æ—¶æ‰éœ€è¦
+	//ä¸‹é¢æˆ‘è¦åšä¸ªåŒå‘å…³è”ï¼Œä½†æ˜¯person2ä¹‹å‰çš„é…ç½®ä¸åŠ¨
+	//è¿™é‡Œä¸è¦åŠ ä¸Šæ‡’åŠ è½½å“¦ï¼ŒåŠ ä¸Šäº†ï¼Œä»¥åæŸ¥äººå‘˜å°±ä¸èƒ½ç›´æ¥æŸ¥è¯¢å‡ºaddressäº†
+	//åŒå‘å…³è”æ—¶ï¼šä¸¤ä¸ªå®ä½“é—´äº’ç›¸å…³è”çš„å±æ€§å¿…é¡»æ ‡è®°ä¸º@ManyToManyï¼Œå¹¶ç›¸äº’æŒ‡å®štargetEntityå±æ€§ã€‚
+	//æœ‰ä¸”åªæœ‰ä¸€ä¸ªå®ä½“çš„@ManyToManyæ³¨è§£éœ€è¦æŒ‡å®šmappedByå±æ€§ï¼ŒæŒ‡å‘targetEntityçš„é›†åˆå±æ€§åç§°ã€‚
+	//è¿™é‡Œçš„mappedBy="addresses"ä¸­çš„addressæ˜¯Person2ä¸­çš„é›†åˆå±æ€§åç§°
+	//ä»€ä¹ˆæ—¶å€™ä½¿ç”¨æ‡’åŠ è½½å‘¢ï¼Ÿè¿™é‡Œå¯¹person2é…ç½®äº†æ‡’åŠ è½½ï¼Œé‚£ä¹ˆå½“æŸ¥è¯¢Addressæ—¶ï¼Œå°±ä¸ä¼šæŠŠaddressç›¸å…³çš„Personä¹Ÿç»™æŸ¥è¯¢å‡ºæ¥äº†ã€‚
+	//é‚£ä¹ˆå½“æŸ¥è¯¢person2æ—¶ï¼Œå°±éœ€è¦å°†æ‡’åŠ è½½å»æ‰äº†ï¼Œå› ä¸ºæˆ‘æŸ¥è¯¢äººå‘˜çš„æ—¶å€™éœ€è¦è·å–è¯¥äººå‘˜çš„åœ°å€ã€‚å¦‚æœä½¿ç”¨ä¸Šæ‡’åŠ è½½åè€Œä¼šæ‹–å®æ€§èƒ½ã€‚è¿™ä¸ªæ—¶å€™éœ€è¦çš„æ˜¯ä¸€æ¬¡æ€§æŸ¥è¯¢å‡ºæ¥
+	//æ‡’åŠ è½½æ˜¯éœ€è¦æ—¶æ‰å»æŸ¥è¯¢ï¼Œè€Œæ­¤æ—¶person2æ˜¯æœ€éœ€è¦Addressçš„æ‰€ä»¥ä»–ä¸éœ€è¦æ‡’åŠ è½½ã€‚addressæ¥è¯´ä»–ä¸éœ€è¦person2é‚£å°±å¯ä»¥ä½¿ç”¨æ‡’åŠ è½½äº†
 	@ManyToMany(mappedBy="addresses",cascade=CascadeType.ALL,targetEntity=Person2.class,fetch=FetchType.LAZY)
 	private Set<Person2> persons2= new HashSet<Person2>();
 
@@ -30,13 +30,13 @@ public class Address
 	public Address()
 	{
 	}
-	//³õÊ¼»¯addressdetailÊôĞÔµÄ¹¹ÔìÆ÷
+	//åˆå§‹åŒ–addressdetailå±æ€§çš„æ„é€ å™¨
 	public Address(String addressdetail)
 	{
 		this.addressdetail = addressdetail;
 	}
 
-	//addressidÊôĞÔµÄsetterºÍgetter·½·¨
+	//addressidå±æ€§çš„setterå’Œgetteræ–¹æ³•
 	public void setAddressid(int addressid)
 	{
 		this.addressid = addressid;
@@ -46,7 +46,7 @@ public class Address
 		return this.addressid;
 	}
 
-	//addressdetailÊôĞÔµÄsetterºÍgetter·½·¨
+	//addressdetailå±æ€§çš„setterå’Œgetteræ–¹æ³•
 	public void setAddressdetail(String addressdetail)
 	{
 		this.addressdetail = addressdetail;
@@ -56,7 +56,7 @@ public class Address
 		return this.addressdetail;
 	}
 
-	//personsÊôĞÔµÄsetterºÍgetter·½·¨
+	//personså±æ€§çš„setterå’Œgetteræ–¹æ³•
 	public void setPersons2(Set<Person2> persons2)
 	{
 		this.persons2 = persons2;

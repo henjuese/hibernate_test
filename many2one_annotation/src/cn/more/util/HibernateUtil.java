@@ -1,6 +1,6 @@
 /**
- *  ¸ÃÀàÖ÷ÒªÑİÊ¾ÁË£¬openSessionºÍgetCurrentSessionËûÃÇÖ®¼äµÄÁªÏµ£»
- *  ´Ó´´½¨getCurrentSession¿ÉÒÔ¿´³öËûÆäÊµ¾ÍÊÇÒ»¸öopenSession;ÕıÒòÎªgetCurrentSessionºÍÏß³Ì¹ØÁªËùÒÔËû²ÅÄÜÎŞÂÛ´´½¨¶àÉÙ¸ösession£¬ÆäÊµ¶¼ÊÇÒ»¸ösession
+ *  è¯¥ç±»ä¸»è¦æ¼”ç¤ºäº†ï¼ŒopenSessionå’ŒgetCurrentSessionä»–ä»¬ä¹‹é—´çš„è”ç³»ï¼›
+ *  ä»åˆ›å»ºgetCurrentSessionå¯ä»¥çœ‹å‡ºä»–å…¶å®å°±æ˜¯ä¸€ä¸ªopenSession;æ­£å› ä¸ºgetCurrentSessionå’Œçº¿ç¨‹å…³è”æ‰€ä»¥ä»–æ‰èƒ½æ— è®ºåˆ›å»ºå¤šå°‘ä¸ªsessionï¼Œå…¶å®éƒ½æ˜¯ä¸€ä¸ªsession
  */
 package cn.more.util;
 
@@ -12,7 +12,7 @@ import org.hibernate.cfg.Configuration;
 final public class HibernateUtil {
 
 	private static SessionFactory sessionFactory=null;
-	//Ê¹ÓÃÏß³Ì¾Ö²¿Ä£Ê½£»ThreadLocal±¾µØÏß³Ì
+	//ä½¿ç”¨çº¿ç¨‹å±€éƒ¨æ¨¡å¼ï¼›ThreadLocalæœ¬åœ°çº¿ç¨‹
 	private static ThreadLocal<Session> thread =new ThreadLocal<Session>();
 	private HibernateUtil(){
 		
@@ -20,19 +20,19 @@ final public class HibernateUtil {
 	
 	static{                     
 		Configuration cfg = new AnnotationConfiguration();
-		//Ê¹ÓÃ×¢½âµÄ»ñÈ¡sessionFactoryµÄ·½·¨£¬ÓëxmlÅäÖÃÎÄ¼şµÄ·½·¨²»Ò»ÑùÅ¶¡£
+		//ä½¿ç”¨æ³¨è§£çš„è·å–sessionFactoryçš„æ–¹æ³•ï¼Œä¸xmlé…ç½®æ–‡ä»¶çš„æ–¹æ³•ä¸ä¸€æ ·å“¦ã€‚
 		sessionFactory=cfg.configure().buildSessionFactory();
 	}
-	//»ñÈ¡Ò»¸öÈ«ĞÂµÄsession
+	//è·å–ä¸€ä¸ªå…¨æ–°çš„session
 	public static Session openSession(){
 		return sessionFactory.openSession();
 	}
-	//»ñÈ¡ºÍÏß³Ì¹ØÁªµÄsession
+	//è·å–å’Œçº¿ç¨‹å…³è”çš„session
 	public static Session getCurrentSession(){
 		Session session=thread.get();
 		if(session==null){
 			session=sessionFactory.openSession();
-			//½«sessionºÍÏß³Ì°ó¶¨
+			//å°†sessionå’Œçº¿ç¨‹ç»‘å®š
 			thread.set(session);
 		}
 		return session;

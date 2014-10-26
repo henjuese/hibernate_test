@@ -27,13 +27,13 @@ public class TestMany2one {
 		//testCatch();
 		//testCatchTwo();
 	}
-	//Ò»¼¶»º´æÉúÃüÖÜÆÚ£¬¶ş¼¶»º´æ²âÊÔ
+	//ä¸€çº§ç¼“å­˜ç”Ÿå‘½å‘¨æœŸï¼ŒäºŒçº§ç¼“å­˜æµ‹è¯•
 	public static void testCatchTwo(){
 		Session session=null;
 		Transaction tran=null;
 		try{
 			session=HibernateUtil.openSession();
-			System.out.println("*****µÚÒ»´Î*********");
+			System.out.println("*****ç¬¬ä¸€æ¬¡*********");
      		Department depart=(Department)session.get(Department.class, 22);
 			System.out.println("depart="+depart.getName());								
 			
@@ -41,15 +41,15 @@ public class TestMany2one {
 			e.printStackTrace();
 		}finally{
 			if(session!=null&&session.isOpen()){
-				session.close();//µ±¹Ø±ÕÊ±£¬Ò»¼¶»º´æ£¨session£©ÉúÃü¾Í½áÊøÁË£¬¼´Çå¿Õ»º´æ¡£
+				session.close();//å½“å…³é—­æ—¶ï¼Œä¸€çº§ç¼“å­˜ï¼ˆsessionï¼‰ç”Ÿå‘½å°±ç»“æŸäº†ï¼Œå³æ¸…ç©ºç¼“å­˜ã€‚
 			}
 		}
 		
-		//¹Ø±ÕsessionºóÔÙ´Î²éÑ¯22ºÅÊı¾İ£¬µ«²¢Ã»ÓĞ³öÏÖsqlÓï¾ä£¬ËµÃ÷ÊÇÈ¥¶ş¼¶»º´æÀïÃæÕÒÁË¡£
+		//å…³é—­sessionåå†æ¬¡æŸ¥è¯¢22å·æ•°æ®ï¼Œä½†å¹¶æ²¡æœ‰å‡ºç°sqlè¯­å¥ï¼Œè¯´æ˜æ˜¯å»äºŒçº§ç¼“å­˜é‡Œé¢æ‰¾äº†ã€‚
 		try{
 			session=HibernateUtil.openSession();
 			//tran=session.beginTransaction();				
-			System.out.println("*****µÚ¶ş´Î*********");
+			System.out.println("*****ç¬¬äºŒæ¬¡*********");
 			Department depart=(Department)session.get(Department.class,22);
 			System.out.println("depart="+depart.getName());
 
@@ -66,7 +66,7 @@ public class TestMany2one {
 	}
 	
 	
-	//»º´æ²âÊÔ
+	//ç¼“å­˜æµ‹è¯•
 	public static void testCatch(){
 		Session session=HibernateUtil.getCurrentSession();
 		Transaction tran=null;
@@ -75,11 +75,11 @@ public class TestMany2one {
 			
 			
 			Department d=new Department();
-			d.setName("ÑĞ·¢²¿444");		
+			d.setName("ç ”å‘éƒ¨444");		
 			session.save(d);
 			System.out.println("**************");
-			//ÕâÀï²¢²»»áÈ¥²éÑ¯Êı¾İ¿â£¬´ÓÖ´ĞĞÏÔÊ¾À´¿´£¬ÕâÀï²¢Ã»ÓĞ²úÉúsql²éÑ¯Óï¾ä£»
-			//ËùÒÔËµ£ºsaveÏÈ»á±£´æµ½sessionÖĞ£¨ÎªÒ»¼¶»º´æ£©Õâ¸öÊ±ºòd¶ÔÏóÒ²Îª³Ö¾Ã×´Ì¬£¬µ±get²éÑ¯Ê±ÏÈ´ÓsessionÖĞÈ¥ÕÒ£¬Èç¹ûÕÒ²»µ½²Å»áÈ¥Êı¾İÀïÃæÕÒ¡£
+			//è¿™é‡Œå¹¶ä¸ä¼šå»æŸ¥è¯¢æ•°æ®åº“ï¼Œä»æ‰§è¡Œæ˜¾ç¤ºæ¥çœ‹ï¼Œè¿™é‡Œå¹¶æ²¡æœ‰äº§ç”ŸsqlæŸ¥è¯¢è¯­å¥ï¼›
+			//æ‰€ä»¥è¯´ï¼šsaveå…ˆä¼šä¿å­˜åˆ°sessionä¸­ï¼ˆä¸ºä¸€çº§ç¼“å­˜ï¼‰è¿™ä¸ªæ—¶å€™då¯¹è±¡ä¹Ÿä¸ºæŒä¹…çŠ¶æ€ï¼Œå½“getæŸ¥è¯¢æ—¶å…ˆä»sessionä¸­å»æ‰¾ï¼Œå¦‚æœæ‰¾ä¸åˆ°æ‰ä¼šå»æ•°æ®é‡Œé¢æ‰¾ã€‚
 			Department depart=(Department)session.get(Department.class, d.getId());
 			System.out.println("depart="+depart.getName());
 						
@@ -88,7 +88,7 @@ public class TestMany2one {
 			
 		}catch(Exception e){
 			if(tran!=null){
-				//Èç¹û³ö´í£¬Ôò»Ø¹ö»ØÈ¥£¬¼´È¡ÏûÉÏÃæµÄ²Ù×÷
+				//å¦‚æœå‡ºé”™ï¼Œåˆ™å›æ»šå›å»ï¼Œå³å–æ¶ˆä¸Šé¢çš„æ“ä½œ
 				tran.rollback();
 			}
 		}finally{
@@ -101,24 +101,24 @@ public class TestMany2one {
 	
 	
 	
-	//¼¶ÁªÅäÖÃ¿ÉÒÔÔÚÖ÷ÀàdepartÖĞÅäÖÃ£¬Ò²¿ÉÒÔÔÚstudentÖĞÅäÖÃ£¬departÖĞÅäÖÃ£¬¼´Ìí¼ÓdepartÊ±£¬×Ô¶¯Ìí¼Óstudent£»·´Ö®Ò»Ñù
-	//Ò»°ãÀ´Ëµ£¬Ö÷Òª»¹ÊÇÌí¼ÓÔÚdepartÖ÷ÀàÖĞ½øĞĞÅäÖÃ
-	//¼¶ÁªÉ¾³ı
+	//çº§è”é…ç½®å¯ä»¥åœ¨ä¸»ç±»departä¸­é…ç½®ï¼Œä¹Ÿå¯ä»¥åœ¨studentä¸­é…ç½®ï¼Œdepartä¸­é…ç½®ï¼Œå³æ·»åŠ departæ—¶ï¼Œè‡ªåŠ¨æ·»åŠ studentï¼›åä¹‹ä¸€æ ·
+	//ä¸€èˆ¬æ¥è¯´ï¼Œä¸»è¦è¿˜æ˜¯æ·»åŠ åœ¨departä¸»ç±»ä¸­è¿›è¡Œé…ç½®
+	//çº§è”åˆ é™¤
 	public static void deleteDepter(){
 		Session session=HibernateUtil.getCurrentSession();
 		Transaction tran=null;
 		try{
 			tran=session.beginTransaction();
 			Department depart=(Department)session.get(Department.class, 27);
-			//ÅäÖÃÎÄ¼şÖĞÉèÖÃDepartment.hbm.xmlÖĞset±êÇ©ÖĞÉèÖÃcascade="delete"±íÊ¾µ±É¾³ıDepartÊ±½«studentÏàÓ¦µÄÒ²É¾³ıµô£¬¼´¼¶ÁªÉ¾³ı£»
-			//É¾³ı¹ı³ÌÖĞ£¬ÏÈ¸üĞÂstudentµÄÓëdepartÏà¹ØÁªµÄÍâ¼üÖÁÎªnull£¬È»ºóÔÚÏÈÉ¾³ıstudent£¬ÔÚÉ¾³ıdepart
+			//é…ç½®æ–‡ä»¶ä¸­è®¾ç½®Department.hbm.xmlä¸­setæ ‡ç­¾ä¸­è®¾ç½®cascade="delete"è¡¨ç¤ºå½“åˆ é™¤Departæ—¶å°†studentç›¸åº”çš„ä¹Ÿåˆ é™¤æ‰ï¼Œå³çº§è”åˆ é™¤ï¼›
+			//åˆ é™¤è¿‡ç¨‹ä¸­ï¼Œå…ˆæ›´æ–°studentçš„ä¸departç›¸å…³è”çš„å¤–é”®è‡³ä¸ºnullï¼Œç„¶ååœ¨å…ˆåˆ é™¤studentï¼Œåœ¨åˆ é™¤depart
 			session.delete(depart);
 			tran.commit();
 			
 			
 		}catch(Exception e){
 			if(tran!=null){
-				//Èç¹û³ö´í£¬Ôò»Ø¹ö»ØÈ¥£¬¼´È¡ÏûÉÏÃæµÄ²Ù×÷
+				//å¦‚æœå‡ºé”™ï¼Œåˆ™å›æ»šå›å»ï¼Œå³å–æ¶ˆä¸Šé¢çš„æ“ä½œ
 				tran.rollback();
 			}
 		}finally{
@@ -134,7 +134,7 @@ public class TestMany2one {
 	
 	public static void testStudent(){
 		Student s=getStudent();
-		System.out.println(s.getName()+",²¿ÃÅ£º"+s.getDepert().getName());
+		System.out.println(s.getName()+",éƒ¨é—¨ï¼š"+s.getDepert().getName());
 	}
 	
 	public static Student getStudent(){
@@ -145,10 +145,10 @@ public class TestMany2one {
 			tran=session.beginTransaction();
 			s=(Student)session.get(Student.class, 2);
 			
-			//¡¶***********¡·ÀÁ¼ÓÔØ½â¾ö·½·¨
-			//1.ÎªÁËÈÃdepartmentÔÚ¹Ø±ÕsessionºóÈÎÈ»ÄÜÓÃ£¬ÕâÀïĞèÒªÓÃµ½hibernate´úÀíÀ´´¦ÀíÀÁ¼ÓÔØ
+			//ã€Š***********ã€‹æ‡’åŠ è½½è§£å†³æ–¹æ³•
+			//1.ä¸ºäº†è®©departmentåœ¨å…³é—­sessionåä»»ç„¶èƒ½ç”¨ï¼Œè¿™é‡Œéœ€è¦ç”¨åˆ°hibernateä»£ç†æ¥å¤„ç†æ‡’åŠ è½½
 			Hibernate.initialize(s.getDepert());
-			//2.¿ÉÒÔÔÚ²»ĞèÒªÀÁ¼ÓÔØµÄÅäÖÃÎÄ¼şÀïÃæµÄclassÊôĞÔÖĞÌí¼Ólazy=false£»ÕâÀï¿ÉÒÔÔÚdepartmentÅäÖÃÎÄ¼şÀïÃæÌí¼Ó
+			//2.å¯ä»¥åœ¨ä¸éœ€è¦æ‡’åŠ è½½çš„é…ç½®æ–‡ä»¶é‡Œé¢çš„classå±æ€§ä¸­æ·»åŠ lazy=falseï¼›è¿™é‡Œå¯ä»¥åœ¨departmenté…ç½®æ–‡ä»¶é‡Œé¢æ·»åŠ 
 			
 			
 			tran.commit();
@@ -156,7 +156,7 @@ public class TestMany2one {
 			
 		}catch(Exception e){
 			if(tran!=null){
-				//Èç¹û³ö´í£¬Ôò»Ø¹ö»ØÈ¥£¬¼´È¡ÏûÉÏÃæµÄ²Ù×÷
+				//å¦‚æœå‡ºé”™ï¼Œåˆ™å›æ»šå›å»ï¼Œå³å–æ¶ˆä¸Šé¢çš„æ“ä½œ
 				tran.rollback();
 			}
 		}finally{
@@ -168,7 +168,7 @@ public class TestMany2one {
 	}
 	
 	
-	//¶à¶ÔÒ»
+	//å¤šå¯¹ä¸€
 	public static void testMoreToOne(){
 		Session session=HibernateUtil.getCurrentSession();
 		Transaction tran=null;
@@ -176,12 +176,12 @@ public class TestMany2one {
 			tran=session.beginTransaction();
 			
 			Student s=new Student();
-			s.setName("¿××Ó");
+			s.setName("å­”å­");
 			Department d=new Department();
-			d.setName("ÑĞ·¢²¿");
+			d.setName("ç ”å‘éƒ¨");
 			s.setDepert(d);
-			//ÒòÎªstudentÖĞÓÃµ½deptart£¬ËùÒÔÏÈ±£´ædepart£¬È»ºóÔÚ±£´æstudent£»Èç¹ûÓÃ¼¶Áª²Ù×÷Ôò¿ÉÒÔÖ±½ÓÌí¼Ódepart¼´¿É
-			//Èç¹ûÔÚstudentÅäÖÃÎÄ¼şÖĞÅäÖÃÁËÁª¼¶£¬ÔòÖ»ĞèÒª±£´æstudent¼´¿É,cascade=allÕâÑù¾ÍokÁË
+			//å› ä¸ºstudentä¸­ç”¨åˆ°deptartï¼Œæ‰€ä»¥å…ˆä¿å­˜departï¼Œç„¶ååœ¨ä¿å­˜studentï¼›å¦‚æœç”¨çº§è”æ“ä½œåˆ™å¯ä»¥ç›´æ¥æ·»åŠ departå³å¯
+			//å¦‚æœåœ¨studenté…ç½®æ–‡ä»¶ä¸­é…ç½®äº†è”çº§ï¼Œåˆ™åªéœ€è¦ä¿å­˜studentå³å¯,cascade=allè¿™æ ·å°±okäº†
 			session.save(d);
 			session.save(s);			
 			tran.commit();
@@ -189,7 +189,7 @@ public class TestMany2one {
 			
 		}catch(Exception e){
 			if(tran!=null){
-				//Èç¹û³ö´í£¬Ôò»Ø¹ö»ØÈ¥£¬¼´È¡ÏûÉÏÃæµÄ²Ù×÷
+				//å¦‚æœå‡ºé”™ï¼Œåˆ™å›æ»šå›å»ï¼Œå³å–æ¶ˆä¸Šé¢çš„æ“ä½œ
 				tran.rollback();
 			}
 		}finally{
@@ -199,7 +199,7 @@ public class TestMany2one {
 		}
 	}
 	
-	//Ò»¶Ô¶à±£´æ¹ØÏµ
+	//ä¸€å¯¹å¤šä¿å­˜å…³ç³»
 		public static void getDepter(){
 			Session session=HibernateUtil.getCurrentSession();
 			Transaction tran=null;
@@ -213,11 +213,11 @@ public class TestMany2one {
 				}
 				 */
 				Student s=new Student();
-				s.setName("Ğ¡Ãü");
+				s.setName("å°å‘½");
 				Student s2=new Student();
-				s2.setName("Ğ¡Ãü1");
+				s2.setName("å°å‘½1");
 				Student s3=new Student();
-				s3.setName("Ğ¡Ãü2");
+				s3.setName("å°å‘½2");
 				
 				Set set=new HashSet<Student>();
 				set.add(s);
@@ -225,12 +225,12 @@ public class TestMany2one {
 				set.add(s3);
 				
 				Department d=new Department();
-				d.setName("²úÆ·²¿");
+				d.setName("äº§å“éƒ¨");
 				
-				//setÀïÃæÓĞĞÂµÄÑ§Éú£¬Õâ¸öÊ±ºò±£´æ²¿ÃÅµÄÊ±ºò¹ØÁªÁËÕâÑ§ĞÂÑ§Éú£¬Õâ¸öÊ±ºòÓ¦¸ÃÊ¹ÓÃ¼¶Áª¹ØÏµÀ´½«ËûÃÇÌí¼Ó½øÈ¥
-				//½«ĞÂ´´½¨µÄÑ§ÉúÓë¸Ã²¿ÃÅÁªÏµÒ²Ìí¼Ó½øÈ¥
-				//(¼¶Áª²Ù×÷)
-				//²»¹ı»¹ĞèÒªÔÚsetÊôĞÔÖĞÅäÖÃcascade="save-update"¼¶Áª¹ØÏµ £»
+				//seté‡Œé¢æœ‰æ–°çš„å­¦ç”Ÿï¼Œè¿™ä¸ªæ—¶å€™ä¿å­˜éƒ¨é—¨çš„æ—¶å€™å…³è”äº†è¿™å­¦æ–°å­¦ç”Ÿï¼Œè¿™ä¸ªæ—¶å€™åº”è¯¥ä½¿ç”¨çº§è”å…³ç³»æ¥å°†ä»–ä»¬æ·»åŠ è¿›å»
+				//å°†æ–°åˆ›å»ºçš„å­¦ç”Ÿä¸è¯¥éƒ¨é—¨è”ç³»ä¹Ÿæ·»åŠ è¿›å»
+				//(çº§è”æ“ä½œ)
+				//ä¸è¿‡è¿˜éœ€è¦åœ¨setå±æ€§ä¸­é…ç½®cascade="save-update"çº§è”å…³ç³» ï¼›
 				d.setStu(set);
 				
 				
@@ -241,7 +241,7 @@ public class TestMany2one {
 				
 			}catch(Exception e){
 				if(tran!=null){
-					//Èç¹û³ö´í£¬Ôò»Ø¹ö»ØÈ¥£¬¼´È¡ÏûÉÏÃæµÄ²Ù×÷
+					//å¦‚æœå‡ºé”™ï¼Œåˆ™å›æ»šå›å»ï¼Œå³å–æ¶ˆä¸Šé¢çš„æ“ä½œ
 					tran.rollback();
 				}
 			}finally{

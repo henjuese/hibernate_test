@@ -17,18 +17,18 @@ public class Person2
 	private int age;
 	
 	@ManyToMany(cascade=CascadeType.ALL,targetEntity=Address.class,fetch=FetchType.EAGER)
-	//Éú³ÉÒ»ÕÅÖĞ¼ä±í
+	//ç”Ÿæˆä¸€å¼ ä¸­é—´è¡¨
 	@JoinTable(name="pes_add",
-				joinColumns=@JoinColumn(name="person_id"),//±¾ÀàÖ÷¼üÔÚÖĞ¼ä±íÉú³ÉµÄ¶ÔÓ¦×Ö¶ÎÃû
-				inverseJoinColumns=@JoinColumn(name="address_id")//¶Ô·½ÀàÖ÷¼üÔÚÖĞ¼ä±íÉú³ÉµÄ¶ÔÓ¦×Ö¶ÎÃû
+				joinColumns=@JoinColumn(name="person_id"),//æœ¬ç±»ä¸»é”®åœ¨ä¸­é—´è¡¨ç”Ÿæˆçš„å¯¹åº”å­—æ®µå
+				inverseJoinColumns=@JoinColumn(name="address_id")//å¯¹æ–¹ç±»ä¸»é”®åœ¨ä¸­é—´è¡¨ç”Ÿæˆçš„å¯¹åº”å­—æ®µå
 			)
 	private Set<Address> addresses= new HashSet<Address>();
 
-	//ÎŞ²ÎÊıµÄ¹¹ÔìÆ÷
+	//æ— å‚æ•°çš„æ„é€ å™¨
 	public Person2()
 	{
 	}
-	//³õÊ¼»¯È«²¿ÊôĞÔµÄ¹¹ÔìÆ÷
+	//åˆå§‹åŒ–å…¨éƒ¨å±æ€§çš„æ„é€ å™¨
 	public Person2(int personid , String name , int age)
 	{
 		this.personid = personid;
@@ -36,7 +36,7 @@ public class Person2
 		this.age = age;
 	}
 
-	//personidÊôĞÔµÄsetterºÍgetter·½·¨
+	//personidå±æ€§çš„setterå’Œgetteræ–¹æ³•
 	public void setPersonid(int personid)
 	{
 		this.personid = personid;
@@ -46,7 +46,7 @@ public class Person2
 		return this.personid;
 	}
 
-	//nameÊôĞÔµÄsetterºÍgetter·½·¨
+	//nameå±æ€§çš„setterå’Œgetteræ–¹æ³•
 	public void setName(String name)
 	{
 		this.name = name;
@@ -56,7 +56,7 @@ public class Person2
 		return this.name;
 	}
 
-	//ageÊôĞÔµÄsetterºÍgetter·½·¨
+	//ageå±æ€§çš„setterå’Œgetteræ–¹æ³•
 	public void setAge(int age)
 	{
 		this.age = age;
@@ -66,7 +66,7 @@ public class Person2
 		return this.age;
 	}
 
-	//addressesÊôĞÔµÄsetterºÍgetter·½·¨
+	//addresseså±æ€§çš„setterå’Œgetteræ–¹æ³•
 	public void setAddresses(Set<Address> addresses)
 	{
 		this.addresses = addresses;

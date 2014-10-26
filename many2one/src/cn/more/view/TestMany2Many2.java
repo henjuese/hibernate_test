@@ -18,7 +18,7 @@ public class TestMany2Many2 {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		//Ã¿¸öÀàÖĞµÄÊôĞÔµÄget£¬set·½·¨²»ÄÜËæ±ãĞŞ¸Ä£¬±ØĞëÎª£º¡°getÊôĞÔÃû¡±ÕâÖÖĞÎÊ½£¬²»È»hibernateÒ²»á±¨´´½¨±íÊ¾ÕÒ²»±¨µ½Ä³Ä³ÁĞ¡£
+		//æ¯ä¸ªç±»ä¸­çš„å±æ€§çš„getï¼Œsetæ–¹æ³•ä¸èƒ½éšä¾¿ä¿®æ”¹ï¼Œå¿…é¡»ä¸ºï¼šâ€œgetå±æ€§åâ€è¿™ç§å½¢å¼ï¼Œä¸ç„¶hibernateä¹Ÿä¼šæŠ¥åˆ›å»ºè¡¨ç¤ºæ‰¾ä¸æŠ¥åˆ°æŸæŸåˆ—ã€‚
 		//HibernateUtil.getCurrentSession();
 		test2();
 	}
@@ -29,24 +29,24 @@ public class TestMany2Many2 {
 		try{
 			tran=session.beginTransaction();
 			
-			Address a = new Address("¹ãÖİÌìºÓ2hao");
-			//ÔÙ³Ö¾Ã»¯Address¶ÔÏó(¶ÔÓ¦ÓÚ²åÈë´Ó±í¼ÇÂ¼)
+			Address a = new Address("å¹¿å·å¤©æ²³2hao");
+			//å†æŒä¹…åŒ–Addresså¯¹è±¡(å¯¹åº”äºæ’å…¥ä»è¡¨è®°å½•)
 			session.persist(a);
-			Address a2 = new Address("¹ãÖİÌìºÓ3hao");
-			//ÔÙ³Ö¾Ã»¯Address¶ÔÏó(¶ÔÓ¦ÓÚ²åÈë´Ó±í¼ÇÂ¼)
+			Address a2 = new Address("å¹¿å·å¤©æ²³3hao");
+			//å†æŒä¹…åŒ–Addresså¯¹è±¡(å¯¹åº”äºæ’å…¥ä»è¡¨è®°å½•)
 			session.persist(a2);
 			
-			//´´½¨Ò»¸öPerson¶ÔÏó
+			//åˆ›å»ºä¸€ä¸ªPersonå¯¹è±¡
 			Person2 p = new Person2();
-			//ÉèÖÃPersonµÄNameÎªYeeku×Ö·û´®
+			//è®¾ç½®Personçš„Nameä¸ºYeekuå­—ç¬¦ä¸²
 			p.setName("bao2");
 			p.setAge(29);
-			//ÕâÀï²¢²»»á½«aÓëpµÄ¹ØÏµÌí¼Óµ½¹ØÏµ¿âÀïÃæ£¬
-			//ÒòÎªperson2.hbm.xmlÖĞÅäÖÃÁËinverse="true"²»×ö¹ØÁª£¬ÈÃaddressÀ´×öÖ÷µ¼
+			//è¿™é‡Œå¹¶ä¸ä¼šå°†aä¸pçš„å…³ç³»æ·»åŠ åˆ°å…³ç³»åº“é‡Œé¢ï¼Œ
+			//å› ä¸ºperson2.hbm.xmlä¸­é…ç½®äº†inverse="true"ä¸åšå…³è”ï¼Œè®©addressæ¥åšä¸»å¯¼
 			p.getAddresses().add(a);
-			//³Ö¾Ã»¯Person¶ÔÏó(¶ÔÓ¦ÓÚ²åÈëÖ÷±í¼ÇÂ¼)
+			//æŒä¹…åŒ–Personå¯¹è±¡(å¯¹åº”äºæ’å…¥ä¸»è¡¨è®°å½•)
 			session.save(p);
-			//´´½¨Ò»¸öË²Ì¬µÄAddress¶ÔÏó
+			//åˆ›å»ºä¸€ä¸ªç¬æ€çš„Addresså¯¹è±¡
 		
 			tran.commit();
 			
@@ -67,27 +67,27 @@ public class TestMany2Many2 {
 		Transaction tran=null;
 		try{
 			tran=session.beginTransaction();
-			//´´½¨Ò»¸öPerson¶ÔÏó
+			//åˆ›å»ºä¸€ä¸ªPersonå¯¹è±¡
 			Person2 p = new Person2();
-			//ÉèÖÃPersonµÄNameÎªYeeku×Ö·û´®
+			//è®¾ç½®Personçš„Nameä¸ºYeekuå­—ç¬¦ä¸²
 			p.setName("Yeeku");
 			p.setAge(29);
-			//³Ö¾Ã»¯Person¶ÔÏó(¶ÔÓ¦ÓÚ²åÈëÖ÷±í¼ÇÂ¼)
+			//æŒä¹…åŒ–Personå¯¹è±¡(å¯¹åº”äºæ’å…¥ä¸»è¡¨è®°å½•)
 			session.save(p);
 			
-			//´´½¨Ò»¸öË²Ì¬µÄAddress¶ÔÏó
-			Address a = new Address("¹ãÖİÌìºÓ");
-			//ÏÈÉèÖÃPersonºÍAddressÖ®¼äµÄ¹ØÁª¹ØÏµ
+			//åˆ›å»ºä¸€ä¸ªç¬æ€çš„Addresså¯¹è±¡
+			Address a = new Address("å¹¿å·å¤©æ²³");
+			//å…ˆè®¾ç½®Personå’ŒAddressä¹‹é—´çš„å…³è”å…³ç³»
 			a.getPersons2().add(p);
-			//ÔÙ³Ö¾Ã»¯Address¶ÔÏó(¶ÔÓ¦ÓÚ²åÈë´Ó±í¼ÇÂ¼)
+			//å†æŒä¹…åŒ–Addresså¯¹è±¡(å¯¹åº”äºæ’å…¥ä»è¡¨è®°å½•)
 			session.persist(a);
 			
 			
-			//´´½¨Ò»¸öË²Ì¬µÄAddress¶ÔÏó
-			Address a2 = new Address("ÉÏº£ºç¿Ú");
-			//ÏÈÉèÖÃPersonºÍAddressÖ®¼äµÄ¹ØÁª¹ØÏµ
+			//åˆ›å»ºä¸€ä¸ªç¬æ€çš„Addresså¯¹è±¡
+			Address a2 = new Address("ä¸Šæµ·è™¹å£");
+			//å…ˆè®¾ç½®Personå’ŒAddressä¹‹é—´çš„å…³è”å…³ç³»
 			a2.getPersons2().add(p);
-			//ÔÙ³Ö¾Ã»¯Address¶ÔÏó(¶ÔÓ¦ÓÚ²åÈë´Ó±í¼ÇÂ¼)
+			//å†æŒä¹…åŒ–Addresså¯¹è±¡(å¯¹åº”äºæ’å…¥ä»è¡¨è®°å½•)
 			session.persist(a2);
 			
 			tran.commit();
